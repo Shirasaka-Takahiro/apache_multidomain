@@ -1,0 +1,7 @@
+version: '3'
+services:
+  httpd:
+    container_name: httpd
+    build: ./apache_conf
+    ports:
+      - "8080:80"
