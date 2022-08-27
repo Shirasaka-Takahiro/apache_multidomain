@@ -1,7 +1,10 @@
 version: '3'
 services:
   httpd:
-    container_name: httpd
+    container_name: apache_multidomain
     build: ./apache_conf
+    volumes:
+      - ./apache_conf/hoge.example.com.conf:/etc/httpd/conf.d/hoge.example.com.conf
+      - ./apache_conf/fuga.example.com.conf:/etc/httpd/conf.d/fuga.example.com.conf
     ports:
       - "8080:80"
